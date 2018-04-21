@@ -5,7 +5,7 @@ let gridHeight = document.querySelector("#gh");
 let gridWidth = document.querySelector("#gw");
 go.addEventListener('click', makeGrid);
 reset.addEventListener('click', resetIt);
-function makeGrid() {
+function makeGrid(event) {
     let noOfRows = gridHeight.value;
     let noOfCol = gridWidth.value;
     console.log(noOfRows, noOfCol);
@@ -19,6 +19,7 @@ function makeGrid() {
     gridHeight.disabled = true;
     gridWidth.disabled = true;
     go.classList.add("hide");
+    event.preventDefault();
 }
 
 function resetIt() {
